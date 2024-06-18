@@ -1,57 +1,62 @@
-body, html {
+body {
     margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    font-family: 'Arial', sans-serif;
-    background: url('https://c0.wallpaperflare.com/preview/608/176/864/finger-bird-animal-hand.jpg') no-repeat center center fixed;
-    background-size: cover;
-}
-
-.container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    text-align: center;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    height: 100vh;
+    background-color: #111; /* Dark background color */
+    background-image: url('https://wallpapercave.com/wp/wp7058004.jpg'); /* Replace with your background image path */
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
-.profile {
-    margin: 0 20px;
-}
-
-.profile-icon {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-audio {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-}
-
-#snowflakes-container {
+.background-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
 }
 
-.snowflake {
+.service-tag {
     position: absolute;
-    top: -10px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.8;
-    pointer-events: none;
-    z-index: 9999;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.service-tag:hover {
+    text-decoration: underline;
+}
+
+.container {
+    text-align: center;
+    color: white;
+}
+
+.icon {
+    position: relative;
+    display: inline-block;
+}
+
+.icon img {
+    width: 150px; /* Adjust size of the icon */
+    height: 150px; /* Adjust size of the icon */
+    border-radius: 50%; /* Makes the icon round */
+    background-color: #333; /* Background color of the icon */
+    padding: 10px; /* Space around the icon */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Glow effect */
+}
+
+.glow {
+    font-size: 2em; /* Adjust font size */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Glow effect on the username */
+}
+
+audio {
+    display: none; /* Hides the audio player */
 }
