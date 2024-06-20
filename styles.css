@@ -1,62 +1,177 @@
-body {
+/* Basic Reset */
+* {
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #111; /* Dark background color */
-    background-image: url('https://wallpapercave.com/wp/wp7058004.jpg'); /* Replace with your background image path */
-    background-size: cover;
-    background-position: center;
-    position: relative;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.background-image {
-    position: absolute;
+/* Body and Background */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: url('https://wallpapercave.com/wp/wp12209868.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    overflow: hidden; /* To hide overflowing snowflakes */
+}
+
+/* Snowflakes */
+@keyframes snow {
+    0% { transform: translateY(-10px); }
+    100% { transform: translateY(100vh); }
+}
+
+.snowflake {
+    position: fixed;
+    top: -10px;
+    z-index: 1000;
+    font-size: 1em;
+    color: #fff;
+    user-select: none;
+    pointer-events: none;
+    animation: snow linear infinite;
+    opacity: 0.9;
+}
+
+.snowflake:nth-of-type(odd) {
+    animation-duration: 10s;
+    animation-delay: 0s;
+}
+
+.snowflake:nth-of-type(even) {
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Header */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1000;
 }
 
-.service-tag {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: white;
-    font-size: 1.5em;
+header h1 {
+    margin-bottom: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: #fff;
     text-decoration: none;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
 }
 
-.service-tag:hover {
-    text-decoration: underline;
+header nav ul li a:hover {
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
 }
 
-.container {
+/* Main */
+main {
+    padding: 80px 20px 60px; /* Adjusting for fixed header and footer */
+    flex-grow: 1;
+}
+
+main section {
+    margin-bottom: 40px;
     text-align: center;
-    color: white;
 }
 
-.icon {
-    position: relative;
-    display: inline-block;
+/* Center Profile Container */
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 160px); /* Adjust for header and footer height */
+    text-align: center;
 }
 
-.icon img {
-    width: 150px; /* Adjust size of the icon */
-    height: 150px; /* Adjust size of the icon */
-    border-radius: 50%; /* Makes the icon round */
-    background-color: #333; /* Background color of the icon */
-    padding: 10px; /* Space around the icon */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Glow effect */
+/* Profile Container */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.glow {
-    font-size: 2em; /* Adjust font size */
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Glow effect on the username */
+.profile-icon {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
 }
 
-audio {
-    display: none; /* Hides the audio player */
+/* Typing Text */
+.typing-text {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
+}
+
+.typing-text p {
+    border-right: .1em solid orange;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 4s steps(40, end) 1s infinite, blink-caret .75s step-end infinite;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
