@@ -1,0 +1,32 @@
+PriverTLO / PriverTLO 
+
+The cheapest, and yet the best TLO service.
+
+We offer $5 TLOs & $1 Government Emails.
+
+From third-world to first-world governments - the choice is yours.
+
+Our TLOs contain the following information:
+ 1. First name
+ 2. Last name
+ 3. Address (and old addresses)
+ 4. Current email (and old emails)
+ 5. Current phone (and old numbers)
+ 6. Date-Of-Birth (DOB)
+ 7. SSN (Social Security Number)
+ 8. Criminal history (if any)
+ 9. A boolean (Yes/No) if public information is accurate on them
+
+We own access to 2 different TLO API networks alongside an internal database aggregation API which compiles data-breaches that their emails, name, and numbers are leaked in and a confirmation on whether the information belongs to the person you look up.
+
+Introducing a new age of information brokerage.
+
+We offer a subscription-based payment with both the TLOs & the government emails. You will be paying $1,500/mo which grants you:
+ 1. Ability to TLO anybody at any given moment.
+ 2. Ability to TLO based on NAME ONLY
+ 3. Ability to setup an automatic dynamic for government emails
+ 4. Ability to pull information on specific crimes (returns full person TLOs)
+
+Our final display of ingenuity is that any pedophile hunter (with given proof) gets 75% off on subscription-based access.
+
+We will release a PSA when we are available to accept payment. You can pre-order after we put out this PSA.
