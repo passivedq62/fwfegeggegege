@@ -1,19 +1,41 @@
-function createSnowflake() {
-    const snowflake = document.createElement('div');
-    snowflake.classList.add('snowflake');
-    document.getElementById('snowflakes-container').appendChild(snowflake);
+document.addEventListener("DOMContentLoaded", function() {
+    const typingText = "priver.info.";
+    let index = 0;
+    const typingSpeed = 100; // typing speed in milliseconds
+    const delayBetweenRepeats = 2000; // delay between typing animations in milliseconds
 
-    snowflake.style.left = `${Math.random() * window.innerWidth}px`;
-    snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // between 2 to 5 seconds
-    snowflake.style.opacity = Math.random();
+    function type() {
+        if (index < typingText.length) {
+            document.getElementById("typingText").innerHTML += typingText.charAt(index);
+            index++;
+            setTimeout(type, typingSpeed);
+        } else {
+            setTimeout(() => {
+                document.getElementById("typingText").innerHTML = "";
+                index = 0;
+                setTimeout(type, typingSpeed);
+            }, delayBetweenRepeats);
+        }
+    }
 
-    snowflake.style.width = `${Math.random() * 10 + 5}px`;
-    snowflake.style.height = snowflake.style.width;
+    type();
 
-    // Remove the snowflake after it falls
-    setTimeout(() => {
-        snowflake.remove();
-    }, 5000);
-}
+    // Create snowflakes
+    for (let i = 0; i < 100; i++) {
+        let snowflake = document.createElement("div");
+        snowflake.classList.add("snowflake");
+        snowflake.textContent = "❄";
+        snowflake.style.left = Math.random() * 100 + "vw";
+        snowflake.style.fontSize = Math.random() * 1.5 + "em";
+        snowflake.style.animationDuration = Math.random() * 3 + 5 + "s";
+        document.body.appendChild(snowflake);
+    }
 
-setInterval(createSnowflake, 50); // Create a new snowflake every 50ms
+    // Play audio on user interaction
+    document.addEventListener("click", function() {
+        const audio = document.getElementById("backgroundAudio");
+        audio.play().catch(function(error) {
+            console.error("Error playing audio:", error);
+        });
+    });
+});
