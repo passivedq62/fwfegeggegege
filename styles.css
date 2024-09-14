@@ -1,177 +1,126 @@
-/* Basic Reset */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap');
+
 * {
+    font-family: 'JetBrains Mono', monospace;
+    color: white;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Body and Background */
 body {
-    font-family: 'Orbitron', sans-serif;
-    background: url('https://wallpapercave.com/wp/wp12209868.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    overflow: hidden; /* To hide overflowing snowflakes */
-}
-
-/* Snowflakes */
-@keyframes snow {
-    0% { transform: translateY(-10px); }
-    100% { transform: translateY(100vh); }
-}
-
-.snowflake {
-    position: fixed;
-    top: -10px;
-    z-index: 1000;
-    font-size: 1em;
-    color: #fff;
-    user-select: none;
-    pointer-events: none;
-    animation: snow linear infinite;
-    opacity: 0.9;
-}
-
-.snowflake:nth-of-type(odd) {
-    animation-duration: 10s;
-    animation-delay: 0s;
-}
-
-.snowflake:nth-of-type(even) {
-    animation-duration: 12s;
-    animation-delay: 2s;
-}
-
-/* Container */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    min-height: 100vh;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    background: #000;
 }
 
-/* Header */
-header {
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+.wallpaper {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('https://i.ytimg.com/vi/pl-QBuRoANU/maxresdefault_live.jpg');
+    background-size: cover;
+    background-position: center;
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-header h1 {
+.container {
+    text-align: center;
+}
+
+.profiles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.pfp {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 3px solid #fff;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.role {
+    color: #ddd;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icon {
+    width: 30px;
+    margin: 0 5px;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.description-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    max-width: 600px;
+    margin: auto;
+}
+
+.description-box h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.description-box p {
     margin-bottom: 10px;
 }
 
-header nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-header nav ul li {
-    display: inline;
-}
-
-header nav ul li a {
-    color: #fff;
+.description-box a {
+    color: #f0f0f0;
     text-decoration: none;
     font-weight: bold;
-    font-family: 'Orbitron', sans-serif;
-    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
 }
 
-header nav ul li a:hover {
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+.description-box a:hover {
+    text-decoration: underline;
 }
 
-/* Main */
-main {
-    padding: 80px 20px 60px; /* Adjusting for fixed header and footer */
-    flex-grow: 1;
-}
-
-main section {
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-/* Center Profile Container */
-.center-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 160px); /* Adjust for header and footer height */
-    text-align: center;
-}
-
-/* Profile Container */
-.profile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.profile-icon {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-}
-
-/* Typing Text */
-.typing-text {
-    margin-top: 10px;
-    font-size: 1.2em;
-    color: #fff;
-}
-
-/* Typing Animation */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: orange; }
-}
-
-.typing-text p {
-    border-right: .1em solid orange;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    animation: typing 4s steps(40, end) 1s infinite, blink-caret .75s step-end infinite;
-}
-
-/* Footer */
-footer {
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    header nav ul {
+@media (max-width: 600px) {
+    .profiles {
         flex-direction: column;
-        gap: 10px;
+        align-items: center;
+    }
+
+    .profile-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .description-box {
+        font-size: 14px;
     }
 }
